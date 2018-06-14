@@ -8,6 +8,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OrderBy ;
+
+import lombok.Data;
+
+@Data
 @Entity
 public class Poll {
 	@Id
