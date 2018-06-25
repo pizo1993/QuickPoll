@@ -10,10 +10,16 @@ import { Poll } from '../models/poll';
 export class PollListComponent implements OnInit {
 
   @Input() poll: Poll;
+  
+
 
   constructor() { }
 
   ngOnInit() {
+
   }
+
+
+
 
 }

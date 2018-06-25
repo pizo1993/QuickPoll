@@ -12,18 +12,26 @@ import 'rxjs/add/operator/toPromise';
 export class AppComponent implements OnInit {
 
 
-  title = 'Applicazione con Spring Boot Angular';
+  title = 'Quick Poll Application';
   polls: Poll[];
+
 
   constructor(private pollService: PollApiService) { }
 
   ngOnInit(): void {
 
-
     this.pollService.getPolls()
     .then(u => {
-      this.polls = u;
+      let pollsObject = u;
+      this.polls = new Array<Poll>;
+      pollsObject.forEach((poll, i) => {
+        this.polls[i]=new Poll(poll.id, poll.question, poll.options);
+      });
     });
+
+
+
+
 
   }
 }

@@ -1,6 +1,6 @@
 export class Option {
 
-  constructor(public value: string) {
+  constructor(public id: number, public value: string) {
 
   }
 }

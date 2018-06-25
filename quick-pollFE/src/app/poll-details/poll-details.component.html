@@ -1,0 +1,6 @@
+
+<ul>
+  <li *ngFor = "let o of options; let i=index">{{i+1}} {{o.value}} </li>
+</ul>
+<input type="button" value ="Vote" (click)="vote()"/>
+<button (click)="showResult()"> Show Result </button>

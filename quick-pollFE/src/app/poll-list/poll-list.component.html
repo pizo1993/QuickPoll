@@ -1,9 +1,18 @@
-<td>
-   <b> {{poll.question}} </b>
-    <table>
-      <tr> <td> {{poll.options[0].value}} </td> </tr>
+<ul>
+<li> {{poll.question}}
+
+  <span *ngIf="!poll.getInfo()">
+   <button id="button_idpoll_{{poll.id}}" (click)="poll.setInfo()"> Mostra opzioni </button>
+  </span>
+  <span *ngIf="poll.getInfo()">
+    <button id="button_idpoll_{{poll.id}}" (click)="poll.setInfo()"> Mostra titolo </button>
+      <app-poll-details [options] = "poll.options"> </app-poll-details>
+  </span>
+</li>
+</ul>
+    <!--  <tr> <td> {{poll.options[0].value}} </td> </tr>
       <tr> <td> {{poll.options[1].value}} </td> </tr>
       <tr> <td> {{poll.options[2].value}} </td> </tr>
       <tr> <td> {{poll.options[3].value}} </td> </tr>
     </table>
-</td>
+</td> -->

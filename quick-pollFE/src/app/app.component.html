@@ -1,10 +1,10 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <h2> Sondaggi disponibili: </h2>
-  <table>
-  	<tr app-poll-list *ngFor="let p of polls" [poll]="p"> </tr>
-  </table>
+<div>
+  <h1 style="text-align:center"> Welcome to {{ title }}! </h1>
+  <div>
+    <h2> Sondaggi disponibili: </h2>
+
+        <app-poll-list *ngFor="let p of polls;" [poll]="p"> </app-poll-list>
+      
+  </div>
 </div>
