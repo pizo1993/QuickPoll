@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-poll-details, [app-poll-list]',
@@ -7,15 +8,25 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PollDetailsComponent implements OnInit {
   @Input() options: Option[];
+  voteSelected: Vote;
+  form: FormGroup;
 
-
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private formBuilder: FormBuilder) {
   }
 
-  public vote(): void {
-    alert("Grazie per il voto");
+  ngOnInit() {
+    this.form = this.formBuilder.group({
+      options: [false, Validators.required],
+    });
+
+  }
+
+  public sendVote(): void {
+    if (this.form.invalid) {
+      alert("ERRORE; SELEZIONARE UN VOTO");
+      return;
+    }
+    alert("Voto selezionato: " + this.voteSelected.value);
   }
 
   public showResult(): void {

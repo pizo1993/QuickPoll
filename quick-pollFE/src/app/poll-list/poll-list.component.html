@@ -2,10 +2,10 @@
 <li> {{poll.question}}
 
   <span *ngIf="!poll.getInfo()">
-   <button id="button_idpoll_{{poll.id}}" (click)="poll.setInfo()"> Mostra opzioni </button>
+   <button id="button_idpoll_{{poll.id}}" (click)="poll.setInfo()"> Mostra Opzioni </button>
   </span>
   <span *ngIf="poll.getInfo()">
-    <button id="button_idpoll_{{poll.id}}" (click)="poll.setInfo()"> Mostra titolo </button>
+    <button id="button_idpoll_{{poll.id}}" (click)="poll.setInfo()"> Nascondi Opzioni </button>
       <app-poll-details [options] = "poll.options"> </app-poll-details>
   </span>
 </li>

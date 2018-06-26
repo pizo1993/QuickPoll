@@ -1,6 +1,9 @@
-
-<ul>
-  <li *ngFor = "let o of options; let i=index">{{i+1}} {{o.value}} </li>
-</ul>
-<input type="button" value ="Vote" (click)="vote()"/>
-<button (click)="showResult()"> Show Result </button>
+<form [formGroup]="form">
+    <div *ngFor="let o of options">
+      <label for="option_{{o.id}}">
+          <input id="options_{{o.id}}" [value]='o' type="radio" formControlName="options" [(ngModel)]="voteSelected">
+            {{o.value}}
+      </label>
+    </div>
+    <button (click)='sendVote()' [disabled]="!form.valid">Send Vote</button>
+</form>

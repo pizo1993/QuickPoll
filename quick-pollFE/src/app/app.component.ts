@@ -14,8 +14,6 @@ export class AppComponent implements OnInit {
 
   title = 'Quick Poll Application';
   polls: Poll[];
-
-
   constructor(private pollService: PollApiService) { }
 
   ngOnInit(): void {
@@ -28,10 +26,5 @@ export class AppComponent implements OnInit {
         this.polls[i]=new Poll(poll.id, poll.question, poll.options);
       });
     });
-
-
-
-
-
   }
 }
