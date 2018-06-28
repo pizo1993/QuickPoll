@@ -15,9 +15,7 @@ export class AppComponent implements OnInit {
   title = 'Quick Poll Application';
   polls: Poll[];
   constructor(private pollService: PollApiService) { }
-
   ngOnInit(): void {
-
     this.pollService.getPolls()
     .then(u => {
       let pollsObject = u;

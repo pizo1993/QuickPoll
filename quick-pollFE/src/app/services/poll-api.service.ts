@@ -11,7 +11,7 @@ export class PollApiService {
   constructor(private http: Http) { }
 
     public getPolls(): Promise<Poll[]> {
-      
+
       return this.http.get(this.pollApiUrl)
             .toPromise()
             .then(response => response.json() as Poll[]);
