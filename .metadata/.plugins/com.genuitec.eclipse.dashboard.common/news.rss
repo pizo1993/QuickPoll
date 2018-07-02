@@ -12,12 +12,31 @@
 	<atom:link href="https://www.genuitec.com/feed/" rel="self" type="application/rss+xml" />
 	<link>https://www.genuitec.com</link>
 	<description>The Cloud Control Company</description>
-	<lastBuildDate>Wed, 27 Jun 2018 11:38:19 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 29 Jun 2018 13:56:16 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=4.9.2</generator>
 	<item>
+		<title>Exciting News about CodeMix</title>
+		<link>https://www.genuitec.com/exciting-news-about-codemix/</link>
+		<pubDate>Wed, 27 Jun 2018 18:48:39 +0000</pubDate>
+		<dc:creator><![CDATA[timwebb]]></dc:creator>
+				<category><![CDATA[Eclipse]]></category>
+		<category><![CDATA[Genuitec]]></category>
+		<category><![CDATA[MyEclipse]]></category>
+		<category><![CDATA[Programming Tips]]></category>
+		<category><![CDATA[Webclipse]]></category>
+		<category><![CDATA[codemix]]></category>
+		<category><![CDATA[codemix release]]></category>
+		<category><![CDATA[sneak peek release]]></category>
+
+		<guid isPermaLink="false">https://www.genuitec.com/?p=592037</guid>
+		<description><![CDATA[<p>We are in the home stretch of the CodeMix technical preview! CodeMix 2.0 is shaping up nicely and will be available in late July 2018. It&#8217;s packed full of new features like integrated TypeScript transpilation, a more responsive Terminal, a new version of Angular IDE built on top of CodeMix 2.0, and so much more! [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://www.genuitec.com/exciting-news-about-codemix/">Exciting News about CodeMix</a> appeared first on <a rel="nofollow" href="https://www.genuitec.com">Genuitec</a>.</p>
+]]></description>
+		</item>
+		<item>
 		<title>A Day with Dani: Digging in for Some Coding</title>
 		<link>https://www.genuitec.com/digging-in-coding/</link>
 		<pubDate>Thu, 21 Jun 2018 15:30:22 +0000</pubDate>
@@ -283,25 +302,6 @@
 <p>The post <a rel="nofollow" href="https://www.genuitec.com/maven-dependency-management-without-full-maven/">Maven Dependency Management &#8211; without Going Full Maven</a> appeared first on <a rel="nofollow" href="https://www.genuitec.com">Genuitec</a>.</p>
 ]]></description>
 		</item>
-		<item>
-		<title>Creating Twitter Clone Using HTML, CSS, jQuery</title>
-		<link>https://www.genuitec.com/creating-twitter-clone-using-html-css-jquery/</link>
-		<pubDate>Mon, 08 Jan 2018 13:38:09 +0000</pubDate>
-		<dc:creator><![CDATA[Bob at Genuitec]]></dc:creator>
-				<category><![CDATA[Eclipse]]></category>
-		<category><![CDATA[Genuitec]]></category>
-		<category><![CDATA[MyEclipse]]></category>
-		<category><![CDATA[Programming Tips]]></category>
-		<category><![CDATA[Webclipse]]></category>
-		<category><![CDATA[create twitter clone]]></category>
-		<category><![CDATA[twitter clone]]></category>
-		<category><![CDATA[webclipse]]></category>
-
-		<guid isPermaLink="false">https://www.genuitec.com/?p=545434</guid>
-		<description><![CDATA[<p>In this project, we are going to create a Twitter clone using HTML, CSS and jQuery only. We will create the Registration screen and Twitter wall, where you can post tweets up to 250 characters in length. You can also retweet and like the tweets. However, since we are not using any server and database, [&#8230;]</p>
-<p>The post <a rel="nofollow" href="https://www.genuitec.com/creating-twitter-clone-using-html-css-jquery/">Creating Twitter Clone Using HTML, CSS, jQuery</a> appeared first on <a rel="nofollow" href="https://www.genuitec.com">Genuitec</a>.</p>
-]]></description>
-		</item>
 	</channel>
 </rss>
 
@@ -310,7 +310,7 @@ Performance optimized by W3 Total Cache. Learn more: https://www.w3-edge.com/pro
 
 Page Caching using disk: enhanced (SSL caching disabled) 
 Content Delivery Network via resources.cloud.genuitec.com
-Database Caching 123/159 queries in 0.762 seconds using disk
+Database Caching 97/158 queries in 1.476 seconds using disk
 
-Served from: www.genuitec.com @ 2018-06-27 08:11:31 by W3 Total Cache
+Served from: www.genuitec.com @ 2018-06-29 09:16:23 by W3 Total Cache
 -->

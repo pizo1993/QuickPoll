@@ -8,6 +8,7 @@ import { PollApiService } from './services/poll-api.service'
 import { AlertService} from './services/alert.service';
 import { AuthenticationService} from './services/authentication.service';
 import { UserService} from './services/user.service';
+import { AccountService} from './services/account.service';
 import { JwtInterceptor} from './helpers/Jwt.interceptor';
 import { ErrorInterceptor} from './helpers/error.interceptor';
 
@@ -46,6 +47,7 @@ import { HomeComponent } from './home/home.component';
     AlertService,
     AuthenticationService,
     UserService,
+    AccountService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
   ],

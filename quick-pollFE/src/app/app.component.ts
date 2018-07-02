@@ -11,18 +11,20 @@ import 'rxjs/add/operator/toPromise';
 
 export class AppComponent implements OnInit {
 
-
+  static API_URL="http://localhost:8080";
   title = 'Quick Poll Application';
   polls: Poll[];
   constructor(private pollService: PollApiService) { }
+
+
   ngOnInit(): void {
-    this.pollService.getPolls()
+    /*this.pollService.getPolls()
     .then(u => {
       let pollsObject = u;
       this.polls = new Array<Poll>;
       pollsObject.forEach((poll, i) => {
         this.polls[i]=new Poll(poll.id, poll.question, poll.options);
       });
-    });
+    });*/
   }
 }
