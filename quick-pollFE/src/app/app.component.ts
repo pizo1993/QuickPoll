@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Poll } from './models/poll';
-import { PollApiService } from './services/poll-api.service';
+import { UserService } from './services/user.service';
 import 'rxjs/add/operator/toPromise';
 
 @Component({
@@ -14,17 +14,10 @@ export class AppComponent implements OnInit {
   static API_URL="http://localhost:8080";
   title = 'Quick Poll Application';
   polls: Poll[];
-  constructor(private pollService: PollApiService) { }
+  constructor() { }
 
 
   ngOnInit(): void {
-    /*this.pollService.getPolls()
-    .then(u => {
-      let pollsObject = u;
-      this.polls = new Array<Poll>;
-      pollsObject.forEach((poll, i) => {
-        this.polls[i]=new Poll(poll.id, poll.question, poll.options);
-      });
-    });*/
+    
   }
 }
