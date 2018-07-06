@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
 
 
     ngOnInit() {
-      //this.loadAllUsers();
+      this.loadAllUsers();
     }
 /*
     deleteUser(id: number) {
@@ -45,6 +45,7 @@ export class HomeComponent implements OnInit {
           let usersObject = u;     
           usersObject.forEach((user, i) => {
           this.users[i]=new User();
+          this.users[i]=user;
           });
         });
     }

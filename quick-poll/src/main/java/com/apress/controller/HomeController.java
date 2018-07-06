@@ -41,7 +41,8 @@ public class HomeController {
 					new CustomErrorType("user with username " + newUser.getUsername() + "already exist "),
 					HttpStatus.CONFLICT);
 		}
-		newUser.setRole("USER");	
+		newUser.setRole("USER");
+		
 		return new ResponseEntity<User>(userService.save(newUser), HttpStatus.CREATED);
 	}
 	

@@ -32,6 +32,7 @@ import lombok.NoArgsConstructor;
 @Table(name="User")
 @Scope("session")
 public  class User implements UserDetails{
+	
 	public static enum Role{ USER }
 	/**
 	 * Description of the property id.
@@ -55,7 +56,7 @@ public  class User implements UserDetails{
 	 * Description of the property role , to grant authority to the user .
 	 */
 	@Column(name="ROLE")
-    private String  role;
+    private String role;
     /**
 	 * Description of the property full name.
 	 */

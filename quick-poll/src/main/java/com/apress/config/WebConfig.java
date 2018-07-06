@@ -3,7 +3,9 @@ package com.apress.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -25,8 +27,18 @@ import com.apress.service.AppUserDetailsService;
  */
 @Configurable
 @EnableWebSecurity
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 // Modifying or overriding the default spring boot security.
 public class WebConfig extends WebSecurityConfigurerAdapter {
+
+	@SuppressWarnings("deprecation")
+	private final class WebMvcConfigurerAdapterExtension extends WebMvcConfigurerAdapter {
+		@Override
+		public void addCorsMappings(CorsRegistry registry) {
+		    registry.addMapping("/**").allowedOrigins("http://localhost:4200");
+		  
+		}
+	}
 
 	@Autowired
 	AppUserDetailsService appUserDetailsService;
@@ -43,13 +55,7 @@ public class WebConfig extends WebSecurityConfigurerAdapter {
 	// all the domain that consume this api must be included in the allowed o'rings 
 	@Bean
 	public WebMvcConfigurer corsConfigurer() {
-	    return new WebMvcConfigurerAdapter() {
-	        @Override
-	        public void addCorsMappings(CorsRegistry registry) {
-	            registry.addMapping("/**").allowedOrigins("http://localhost:4200");
-	          
-	        }
-	    };
+	    return new WebMvcConfigurerAdapterExtension();
 	}
 	// This method is for overriding some configuration of the WebSecurity
 	// If you want to ignore some request or request patterns then you can
@@ -67,7 +73,8 @@ public class WebConfig extends WebSecurityConfigurerAdapter {
 		// starts authorizing configurations
 		.authorizeRequests()
 		// ignoring the guest's urls "
-		.antMatchers("/register","/login","/logout").permitAll()
+		.antMatchers("/users").hasAuthority("USER")
+		.antMatchers("/register","/login","/logout").permitAll()	
 		// authenticate all remaining URLS
 		.anyRequest().fullyAuthenticated().and()
       /* "/logout" will log the user out by invalidating the HTTP Session,
