@@ -11,13 +11,13 @@ import 'rxjs/add/operator/toPromise';
 
 export class AppComponent implements OnInit {
 
-  static API_URL="http://localhost:8080";
+  static API_URL = 'http://localhost:8080';
   title = 'Quick Poll Application';
   polls: Poll[];
   constructor() { }
 
 
   ngOnInit(): void {
-    
+
   }
 }

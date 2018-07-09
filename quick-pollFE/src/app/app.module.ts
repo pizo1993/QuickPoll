@@ -4,7 +4,7 @@ import { HttpModule } from '@angular/http';
 import { FormsModule, FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
-import { PollApiService } from './services/poll-api.service'
+import { PollApiService } from './services/poll-api.service';
 import { AlertService} from './services/alert.service';
 import { AuthenticationService} from './services/authentication.service';
 import { UserService} from './services/user.service';
@@ -13,7 +13,7 @@ import { JwtInterceptor} from './helpers/Jwt.interceptor';
 import { ErrorInterceptor} from './helpers/error.interceptor';
 
 import { AppComponent } from './app.component';
-import { routing }        from './app.routing';
+import { routing } from './app.routing';
 import { AuthGuard } from './guard/auth.guard';
 import { PollListComponent } from './poll-list/poll-list.component';
 import { PollDetailsComponent } from './poll-details/poll-details.component';

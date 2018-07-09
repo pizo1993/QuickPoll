@@ -2623,3 +2623,10 @@
 2018-07-06 12:22:24,174 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2018-07-06 12:22:24,177 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2018-07-06 12:22:24,178 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\abs\Desktop\Java_WEB\QuickPoll\quick-poll\src\test\resources
+2018-07-09 11:37:31,735 [Worker-6] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2018-07-09 11:37:57,163 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-07-09 11:37:57,171 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2018-07-09 11:37:57,190 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-07-09 11:37:57,193 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2018-07-09 11:37:57,193 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\abs\Desktop\Java_WEB\QuickPoll\quick-poll\src\test\resources
+2018-07-09 14:05:36,548 [Worker-1] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
