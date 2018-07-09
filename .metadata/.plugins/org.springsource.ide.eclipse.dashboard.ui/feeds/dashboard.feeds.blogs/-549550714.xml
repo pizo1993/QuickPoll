@@ -167,31 +167,31 @@
 &lt;p&gt;Today it is with an optimistic look to the future that I am announcing the end of life for Spring Social, a project that I have had the pleasure to work with over the past eight years.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
-&lt;p&gt;With the release of Spring Security 5, much of the functionality offered by Spring Social’s connection framework—which I consider the most valuable piece of Spring Social—is now part of Spring Security. In fact, I shared how to use Spring Security’s new support for client-side OAuth2 in a &lt;a href="https://spring.io/blog/2018/03/06/using-spring-security-5-to-integrate-with-oauth-2-secured-services-such-as-facebook-and-github"&gt;blog article&lt;/a&gt; from back in March. And as Spring Security continues to evolve its client-side OAuth support, Spring Social’s connection framework will continue to become more unnecessary. It simply no longer makes sense to have Spring’s OAuth story spread across so many projects—it’s time for a single cohesive OAuth story for Spring developers.&lt;/p&gt;
+&lt;p&gt;With the release of Spring Security 5, much of the functionality offered by Spring Socialâ€™s connection frameworkâ€”which I consider the most valuable piece of Spring Socialâ€”is now part of Spring Security. In fact, I shared how to use Spring Securityâ€™s new support for client-side OAuth2 in a &lt;a href="https://spring.io/blog/2018/03/06/using-spring-security-5-to-integrate-with-oauth-2-secured-services-such-as-facebook-and-github"&gt;blog article&lt;/a&gt; from back in March. And as Spring Security continues to evolve its client-side OAuth support, Spring Socialâ€™s connection framework will continue to become more unnecessary. It simply no longer makes sense to have Springâ€™s OAuth story spread across so many projectsâ€”itâ€™s time for a single cohesive OAuth story for Spring developers.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
-&lt;p&gt;But what about Spring Social’s API bindings?&lt;/p&gt;
+&lt;p&gt;But what about Spring Socialâ€™s API bindings?&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="sect1"&gt;
 &lt;h2 id="the-unwieldy-api-binding"&gt;&lt;a class="anchor" href="#the-unwieldy-api-binding"&gt;&lt;/a&gt;The unwieldy API binding&lt;/h2&gt;
 &lt;div class="sectionbody"&gt;
 &lt;div class="paragraph"&gt;
-&lt;p&gt;This end of life announcement also covers Spring Social’s API bindings, including the API bindings for Facebook, Twitter, and LinkedIn.&lt;/p&gt;
+&lt;p&gt;This end of life announcement also covers Spring Socialâ€™s API bindings, including the API bindings for Facebook, Twitter, and LinkedIn.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
-&lt;p&gt;Spring Social’s API bindings were originally intended to be little more than a showcase of how one might use the connection produced by the connection framework. But then they grew and took on a life of their own.&lt;/p&gt;
+&lt;p&gt;Spring Socialâ€™s API bindings were originally intended to be little more than a showcase of how one might use the connection produced by the connection framework. But then they grew and took on a life of their own.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
-&lt;p&gt;While the API bindings are generally useful for applications that need to interact with the APIs that they serve, they are rather bulky, complex, and unwieldy for practical use. To that point, the Facebook API binding offers roughly 180 distinct operations, even though it’d be rare to find an application that requires more than a half-dozen of those operations.&lt;/p&gt;
+&lt;p&gt;While the API bindings are generally useful for applications that need to interact with the APIs that they serve, they are rather bulky, complex, and unwieldy for practical use. To that point, the Facebook API binding offers roughly 180 distinct operations, even though itâ€™d be rare to find an application that requires more than a half-dozen of those operations.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
-&lt;p&gt;It has also proven difficult to keep the API bindings in sync with the APIs that they serve. As APIs (such as Facebook’s Graph API) continue to evolve, Spring Social’s API bindings need to be revisited (and in some cases completely rewritten with breaking changes) to maintain compatibility with their respective APIs. Considering the aforementioned size of the API bindings, this requires an enormous development and testing effort—for something that was originally intended as merely an example of how API bindings could be written.&lt;/p&gt;
+&lt;p&gt;It has also proven difficult to keep the API bindings in sync with the APIs that they serve. As APIs (such as Facebookâ€™s Graph API) continue to evolve, Spring Socialâ€™s API bindings need to be revisited (and in some cases completely rewritten with breaking changes) to maintain compatibility with their respective APIs. Considering the aforementioned size of the API bindings, this requires an enormous development and testing effortâ€”for something that was originally intended as merely an example of how API bindings could be written.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
-&lt;p&gt;Finally, now that Spring Framework 5 has unleashed a reactive programming model on Spring developers, there has been a demand for reactive counterparts to Spring Social’s API bindings. While this is certainly possible and understandably desirable, it would require an effort that is proportional to the size of the existing API bindings and that essentially duplicates most of the operations offered in the non-reactive API bindings. This would effectively double the size of the API bindings, making the maintenance of such bindings that much more challenging.&lt;/p&gt;
+&lt;p&gt;Finally, now that Spring Framework 5 has unleashed a reactive programming model on Spring developers, there has been a demand for reactive counterparts to Spring Socialâ€™s API bindings. While this is certainly possible and understandably desirable, it would require an effort that is proportional to the size of the existing API bindings and that essentially duplicates most of the operations offered in the non-reactive API bindings. This would effectively double the size of the API bindings, making the maintenance of such bindings that much more challenging.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
-&lt;p&gt;Instead, may I suggest that application developers write their own API binding implementations? In doing so, you’ll be able to work with an API binding that is more focused to the needs of your application and that is easier to maintain than the behemoth API bindings offered by Spring Social. Moreover, if you wish to apply reactive types in your API binding, you are welcome to do so. I suggested an approach to this in the article I published in March.&lt;/p&gt;
+&lt;p&gt;Instead, may I suggest that application developers write their own API binding implementations? In doing so, youâ€™ll be able to work with an API binding that is more focused to the needs of your application and that is easier to maintain than the behemoth API bindings offered by Spring Social. Moreover, if you wish to apply reactive types in your API binding, you are welcome to do so. I suggested an approach to this in the article I published in March.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -199,13 +199,13 @@
 &lt;h2 id="sunsetting-spring-social"&gt;&lt;a class="anchor" href="#sunsetting-spring-social"&gt;&lt;/a&gt;Sunsetting Spring Social&lt;/h2&gt;
 &lt;div class="sectionbody"&gt;
 &lt;div class="paragraph"&gt;
-&lt;p&gt;Spring Social isn’t going away immediately. I intend to continue working on minor bug fixes and releasing maintenance releases as needed. But unless there is a significant and compelling requirement to do so, there are no plans for any further GA releases of Spring Social.&lt;/p&gt;
+&lt;p&gt;Spring Social isnâ€™t going away immediately. I intend to continue working on minor bug fixes and releasing maintenance releases as needed. But unless there is a significant and compelling requirement to do so, there are no plans for any further GA releases of Spring Social.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
 &lt;p&gt;Spring Social (and the aforementioned Spring Social API binding modules) will continue to be supported for 12 months from today, with the support period ending on July 3, 2019.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
-&lt;p&gt;I sincerely thank everyone who has worked with and contributed to Spring Social over the past 8 years. It has been a fun project to work on and it is with a small amount of sadness that I am announcing its eventual demise. Be assured that it wasn’t a decision made lightly. But I encourage you to check out Spring Security 5’s client-side OAuth support and continue to work with us through suggestions and pull requests to help write this new chapter in Spring’s OAuth story.&lt;/p&gt;
+&lt;p&gt;I sincerely thank everyone who has worked with and contributed to Spring Social over the past 8 years. It has been a fun project to work on and it is with a small amount of sadness that I am announcing its eventual demise. Be assured that it wasnâ€™t a decision made lightly. But I encourage you to check out Spring Security 5â€™s client-side OAuth support and continue to work with us through suggestions and pull requests to help write this new chapter in Springâ€™s OAuth story.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;</content>
@@ -219,7 +219,7 @@
     </author>
     <id>tag:spring.io,2018-07-03:3324</id>
     <updated>2018-07-03T05:08:48Z</updated>
-    <content type="html">&lt;p&gt;Hi Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! This week I&amp;rsquo;m fresh of the amazing Spring Connect São Paulo event and speaking with some customers, and now I&amp;rsquo;m in beautiful Rio de Janeiro soaking up the winter rays by he beach, connecting with people in the community, and delivering a (virtual!) 2 day live training course for O&amp;rsquo;Reilly on building cloud-native Java-based applications. In less than two days I&amp;rsquo;ll be home for the first time in almost a month to celebrate the 4th of July. If you&amp;rsquo;re in America, let me be the first to wish you a happy holiday. As usual, we&amp;rsquo;ve got a ton of things to dive into so I&amp;rsquo;ll leave you to it. Let&amp;rsquo;s get going.&lt;/p&gt;
+    <content type="html">&lt;p&gt;Hi Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! This week I&amp;rsquo;m fresh of the amazing Spring Connect SÃ£o Paulo event and speaking with some customers, and now I&amp;rsquo;m in beautiful Rio de Janeiro soaking up the winter rays by he beach, connecting with people in the community, and delivering a (virtual!) 2 day live training course for O&amp;rsquo;Reilly on building cloud-native Java-based applications. In less than two days I&amp;rsquo;ll be home for the first time in almost a month to celebrate the 4th of July. If you&amp;rsquo;re in America, let me be the first to wish you a happy holiday. As usual, we&amp;rsquo;ve got a ton of things to dive into so I&amp;rsquo;ll leave you to it. Let&amp;rsquo;s get going.&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;Our very own Josh McKenty has a wonderful post, &lt;a href="https://content.pivotal.io/blog/why-i-love-redis"&gt;&lt;em&gt;Why I Love Redis&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;If you&amp;rsquo;re in the Seattle area don&amp;rsquo;t miss this wonderful Spring and &lt;a href="https://connect.pivotal.io/Java-Spring-Cloud-Native-Bootcamp-Seattle.html"&gt;cloud-native bootcamp done in cooperation with Pivotal, Microsoft and Perficient&lt;/a&gt;&lt;/li&gt;
@@ -716,23 +716,23 @@ So, let&amp;#8217;s get straight to it by looking at both the synchronous and th
 &lt;div class="listingblock"&gt;
 &lt;div class="content"&gt;
 &lt;pre class="prettyprint highlight"&gt;&lt;code class="language-javascript" data-lang="javascript"&gt;{ insert: "col", ordered: true, $db: "db",
-  $clusterTime: { … },
-  lsid: { id: { $binary: { base64 : "I3M7Nj…", … } } },
+  $clusterTime: { â€¦ },
+  lsid: { id: { $binary: { base64 : "I3M7Njâ€¦", â€¦ } } },
   txnNumber: 1,
   startTransaction: true,
-  documents: [ { … } ] }
+  documents: [ { â€¦ } ] }
 
 { insert: "col", ordered: true, $db: "db",
-  $clusterTime: { … },
-  lsid: { id: { $binary: { base64 : "I3M7Nj…", … } } },
+  $clusterTime: { â€¦ },
+  lsid: { id: { $binary: { base64 : "I3M7Njâ€¦", â€¦ } } },
   txnNumber: 1,
   autocommit: false,
-  documents: [ { …} ] }
+  documents: [ { â€¦} ] }
 
 { commitTransaction: 1,
   $db: "admin",
-  $clusterTime: { … },
-  lsid: { id: { $binary: { base64 : "I3M7Nj…", … } } },
+  $clusterTime: { â€¦ },
+  lsid: { id: { $binary: { base64 : "I3M7Njâ€¦", â€¦ } } },
   txnNumber: 1 }&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -801,13 +801,13 @@ class DocumentService {
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
-&lt;p&gt;We need to make sure the transaction terminates, either successfully or with a rollback. Therefore, &lt;code&gt;onErrorResume(…)&lt;/code&gt; ensures the transaction rolls back upon failure as well as ensuring that the final &lt;code&gt;flatMap(…)&lt;/code&gt; commits the transaction, both of which preserve the main flow result or error. And, as always, make sure to close the session (in the &lt;code&gt;doFinally(…)&lt;/code&gt; block) when you don&amp;#8217;t need it any more.&lt;/p&gt;
+&lt;p&gt;We need to make sure the transaction terminates, either successfully or with a rollback. Therefore, &lt;code&gt;onErrorResume(â€¦)&lt;/code&gt; ensures the transaction rolls back upon failure as well as ensuring that the final &lt;code&gt;flatMap(â€¦)&lt;/code&gt; commits the transaction, both of which preserve the main flow result or error. And, as always, make sure to close the session (in the &lt;code&gt;doFinally(â€¦)&lt;/code&gt; block) when you don&amp;#8217;t need it any more.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
 &lt;p&gt;Unlike the sync part, there is, at the time of this writing, no reactive transaction manager available that would let you annotate methods with &lt;code&gt;@Transactional&lt;/code&gt; and let you get on with doing the things that simply work.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
-&lt;p&gt;Instead, you have access to a transaction closure through &lt;code&gt;ReactiveMongoTemplate.inTransaction(…)&lt;/code&gt;. It takes care of all the required session, commit, and abort handling while maintaining the main flow result. The processing steps within the callback are executed inside a MongoDB transaction, while processing steps outside do not influence the transaction. This means that processing errors outside the closure do not lead to a transaction abort, as illustrated in the sample shown below.&lt;/p&gt;
+&lt;p&gt;Instead, you have access to a transaction closure through &lt;code&gt;ReactiveMongoTemplate.inTransaction(â€¦)&lt;/code&gt;. It takes care of all the required session, commit, and abort handling while maintaining the main flow result. The processing steps within the callback are executed inside a MongoDB transaction, while processing steps outside do not influence the transaction. This means that processing errors outside the closure do not lead to a transaction abort, as illustrated in the sample shown below.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="listingblock"&gt;
 &lt;div class="content"&gt;
@@ -844,7 +844,7 @@ class DocumentService {
     <content type="html">&lt;p&gt;Hi Spring fans and welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! This last week&amp;rsquo;s been fun! Since we last spoke, I have been in Amsterdam (customers), London (SpringOne Tour London); Paris, Fr (JHipster Conf); Krakow, Pl (Devoxx PL); and now Sao Paulo, Br (Spring Connect SP). It&amp;rsquo;s been a wild ride and it&amp;rsquo;s nice to conclude the journey here in Brazil with one of the largest Java communities on earth. &lt;/p&gt;
 &lt;p&gt;And, as a cherry on top, there is a &lt;em&gt;ton&lt;/em&gt; of great stuff to look at in this week&amp;rsquo;s roundup so let&amp;rsquo;s get to it! &lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;Spring Data Geode / Gemfire lead John Blum has just announced the Spring Boot integration for &lt;a href="https://spring.io/blog/2018/06/26/spring-boot-for-apache-geode-pivotal-gemfire-1-0-0-m1-released"&gt;Apache Geode and Pivotal Gemfire 1.0.0.M1&lt;/a&gt;. It supports look-aside caching using Spring’s Cache Abstraction, system of record (SOR) using Spring Data Repositories and Spring transaction management, distributed compute using function implementation &amp;amp; executions, event stream processing (ESP) using continuous query, domain object versioning/serialization using PDX, Security, authentication / authorization, and TLS using SSL.&lt;/li&gt;
+  &lt;li&gt;Spring Data Geode / Gemfire lead John Blum has just announced the Spring Boot integration for &lt;a href="https://spring.io/blog/2018/06/26/spring-boot-for-apache-geode-pivotal-gemfire-1-0-0-m1-released"&gt;Apache Geode and Pivotal Gemfire 1.0.0.M1&lt;/a&gt;. It supports look-aside caching using Springâ€™s Cache Abstraction, system of record (SOR) using Spring Data Repositories and Spring transaction management, distributed compute using function implementation &amp;amp; executions, event stream processing (ESP) using continuous query, domain object versioning/serialization using PDX, Security, authentication / authorization, and TLS using SSL.&lt;/li&gt;
   &lt;li&gt;Not one to rest on his laurels, Spring Data Geode/Gemfire lead John Blum &lt;a href="https://spring.io/blog/2018/06/21/spring-session-for-apache-geode-pivotal-gemfire-2-0-3-release-released"&gt;has announced Spring Session for Apache Geode/Pivotal Gemfire 2.0.3.RELEASE&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Check out this minimal &lt;a href="https://github.com/spring-projects/spring-fu/issues/29#issuecomment-398791917"&gt;Spring Fu webapp that now compiles to a native image successfully&lt;/a&gt; with Graal 1.0.0.RC2 and Kotlin 1.2.60 (will also work with 1.2.51), and Netty! Startup time is &amp;lt; 3 ms with Graal on my admittedly fairly quick Linux/Dell Precision 5520 (to be compared with 900 ms with Java 10). The self-sufficient &lt;a href="https://github.com/spring-projects/spring-fu/issues/29#issuecomment-398791917"&gt;executable size is 50 MB but there&amp;rsquo;s every reason to think we can reduce it.&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Hi Spring fans! We&amp;rsquo;ve officially concluded &lt;a href="https://spring.io/blog/2018/06/20/spring-tips-season-4-recap"&gt;our latest season of Spring Tips, season 4&lt;/a&gt;. If you want to learn more you should check out this recap post which lists every installment of &lt;em&gt;Spring Tips&lt;/em&gt; to date. As always I&amp;rsquo;m keen on any suggestions &lt;a href="http://twitter.com/Starbuxman"&gt;for the latest and greatest tips&lt;/a&gt;. And don&amp;rsquo;t worry, we&amp;rsquo;ll be back! :)&lt;/li&gt;
@@ -1345,8 +1345,8 @@ public class UppercaseApplication {&#xD;
   &lt;li&gt;Not one to rest on his laurels, Andy Wilkinson also just announced &lt;a href="https://spring.io/blog/2018/06/18/spring-io-platform-brussels-sr11"&gt;Spring IO Platform Brussels SR11&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Brian Clozel published the following &lt;a href="https://spring.io/blog/2018/06/14/spring-project-vulnerability-reports-published"&gt;Spring Framework-related CVEs!&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Brian Clozel &lt;a href="https://spring.io/blog/2018/06/14/spring-boot-2-0-3-available-now"&gt;has just announced Spring Boot 2.0.3&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Stéphane Nicoll has &lt;a href="https://spring.io/blog/2018/06/14/spring-boot-1-5-14-available-now"&gt;just announced Spring Boot 1.5.14&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Simon Baslé has just &lt;a href="https://spring.io/blog/2018/06/14/announcing-reactor-bismuth-sr10"&gt;announced the Reactor Bismuth-SR10 release&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;StÃ©phane Nicoll has &lt;a href="https://spring.io/blog/2018/06/14/spring-boot-1-5-14-available-now"&gt;just announced Spring Boot 1.5.14&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Simon BaslÃ© has just &lt;a href="https://spring.io/blog/2018/06/14/announcing-reactor-bismuth-sr10"&gt;announced the Reactor Bismuth-SR10 release&lt;/a&gt;.&lt;/li&gt;
   &lt;li&gt;&lt;a href="https://spring.io/blog/2018/06/14/spring-session-apple-sr3-released"&gt;Spring Session Apple SR3 Released&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Mark Paluch &lt;a href="https://spring.io/blog/2018/06/14/spring-data-ingalls-sr13-and-kay-sr8-released"&gt;announced Spring Data Ingest SR13 and Spring Data Key SR8&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Spring Cloud Stream ninja Soby Chacko &lt;a href="https://github.com/spring-cloud/spring-cloud-stream-samples/tree/master/partitioning-samples"&gt;has some nice examples demonstrating partitioning&lt;/a&gt;&lt;/li&gt;
