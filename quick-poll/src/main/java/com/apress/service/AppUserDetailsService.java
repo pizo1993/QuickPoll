@@ -11,7 +11,7 @@ import com.apress.domain.User;
 
 /**
  * This Service class for providing the user credentials from the database.
- * 
+ *
  * @author kamal berriga
  *
  */
