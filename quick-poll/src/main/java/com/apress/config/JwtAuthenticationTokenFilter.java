@@ -27,18 +27,29 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws ServletException, IOException {
         String authToken = request.getHeader(this.tokenHeader);
         UserDetails userDetails = null;
+        
+        logger.info("Token: " + authToken);
+        
+        
         if(authToken != null){
             userDetails = jwtTokenUtil.getUserDetails(authToken);
+            
         }
         if (userDetails != null && SecurityContextHolder.getContext().getAuthentication() == null) {
             // Ricostruisco l userdetails con i dati contenuti nel token
             // controllo integrita' token
+        	logger.info("Valid Token? :" + jwtTokenUtil.validateToken(authToken, userDetails));
             if (jwtTokenUtil.validateToken(authToken, userDetails)) {
                 UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
                 authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                 SecurityContextHolder.getContext().setAuthentication(authentication);
             }
         }
+        response.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, OPTIONS, DELETE");
+    	response.setHeader("Access-Control-Allow-Headers", "X-Auth, Content-Type");
+        response.setHeader("Access-Control-Expose-Headers", "X-Auth");
+    	response.setHeader("Access-Control-Allow-Credentials", "false");
+        response.setHeader("Access-Control-Max-Age", "4800");
         chain.doFilter(request, response);
     }
 }

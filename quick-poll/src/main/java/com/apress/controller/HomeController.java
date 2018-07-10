@@ -78,7 +78,7 @@ public class HomeController {
 	@CrossOrigin(origins = "http://localhost:4200")
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtAuthenticationRequest authenticationRequest, HttpServletResponse response) throws AuthenticationException, JsonProcessingException {
-		logger.info("Body: " + authenticationRequest);
+		
         // Effettuo l autenticazione
         final Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
@@ -87,26 +87,25 @@ public class HomeController {
                 )
         );
         SecurityContextHolder.getContext().setAuthentication(authentication);
-
         // Genero Token
-        final UserDetails userDetails = userService.findByUsername(authenticationRequest.getUsername());
+        final User userDetails = userService.findByUsername(authenticationRequest.getUsername());
         final String token = jwtTokenUtil.generateToken(userDetails);
-        response.setHeader(tokenHeader,token);
+        response.addHeader(tokenHeader,token);
         // Ritorno il token
-        return ResponseEntity.ok(new JwtAuthenticationResponse(userDetails.getUsername(),userDetails.getAuthorities()));
+        return ResponseEntity.ok(new JwtAuthenticationResponse(userDetails.getUsername(),userDetails.getAuthorities(), userDetails.getFullName()));
     }
 
     @RequestMapping(value = "protected/refresh-token", method = RequestMethod.GET)
     public ResponseEntity<?> refreshAndGetAuthenticationToken(HttpServletRequest request, HttpServletResponse response) {
         String token = request.getHeader(tokenHeader);
-        UserDetails userDetails =
-                (UserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User userDetails =
+                (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
         if (jwtTokenUtil.canTokenBeRefreshed(token)) {
             String refreshedToken = jwtTokenUtil.refreshToken(token);
             response.setHeader(tokenHeader,refreshedToken);
 
-            return ResponseEntity.ok(new JwtAuthenticationResponse(userDetails.getUsername(),userDetails.getAuthorities()));
+            return ResponseEntity.ok(new JwtAuthenticationResponse(userDetails.getUsername(),userDetails.getAuthorities(), userDetails.getFullName()));
         } else {
             return ResponseEntity.badRequest().body(null);
         }

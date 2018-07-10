@@ -14,16 +14,19 @@ export class UserService {
     
     public getAll(): Promise<User[]> {
       
-    /* let headers = new Headers();
-    headers.append('Accept', 'application/json')
+   
     // creating base64 encoded String from user name and password
-    var base64Credential: string = btoa( user.username+ ':' + user.password);
-    headers.append("Authorization", "Basic " + base64Credential);
+    //var base64Credential: string = btoa( user.username+ ':' + user.password);
+    let headers = new Headers({
+     'Content-Type': 'application/json',
+     'X-Auth': JSON.parse(localStorage.getItem('token'))
+     });
+      
 //
     let options = new RequestOptions();
-    options.headers=headers;*/      
+    options.headers=headers;  
     
-      return this.http.get(this.usersUrl)
+      return this.http.get(this.usersUrl, options)
             .toPromise()
             .then(response => response.json() as User[]);
   }

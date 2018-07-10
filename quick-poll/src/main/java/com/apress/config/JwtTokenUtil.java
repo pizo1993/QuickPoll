@@ -1,11 +1,14 @@
 package com.apress.config;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -50,16 +53,23 @@ public class JwtTokenUtil implements Serializable {
         }
         return username;
     }
+    
+    
     public JwtUser getUserDetails(String token) {
         if(token == null){
             return null;
         }
         try {
             final Claims claims = getClaimsFromToken(token);
-            Collection<SimpleGrantedAuthority> authorities = null;
+            
+            Collection<? extends GrantedAuthority> authorities = null;
             if (claims.get(CLAIM_KEY_AUTHORITIES) != null) {
-                authorities = ((Collection<String>) claims.get(CLAIM_KEY_AUTHORITIES)).stream().map(role-> new SimpleGrantedAuthority(role)).collect(Collectors.toList());
+                authorities=Arrays.stream(claims.get(CLAIM_KEY_AUTHORITIES).toString().split(","))
+                        .map(SimpleGrantedAuthority::new)
+                        .collect(Collectors.toList());
+                		
             }
+            System.out.println("authorities: " + authorities );
             return new JwtUser(
                     claims.getSubject(),
                     "",
@@ -67,6 +77,7 @@ public class JwtTokenUtil implements Serializable {
                     (boolean) claims.get(CLAIM_KEY_IS_ENABLED)
             );
         } catch (Exception e) {
+        	e.printStackTrace();
             return null;
         }
     }
@@ -140,11 +151,15 @@ public class JwtTokenUtil implements Serializable {
         claims.put(CLAIM_KEY_USERNAME, userDetails.getUsername());
         //claims.put(CLAIM_KEY_AUDIENCE, generateAudience(device));
         claims.put(CLAIM_KEY_CREATED, new Date());
-        Collection<? extends GrantedAuthority> auth =userDetails.getAuthorities();
+        Collection<? extends GrantedAuthority> auth =
+                Arrays.stream(userDetails.getAuthorities().toString().split(","))
+                    .map(SimpleGrantedAuthority::new)
+                    .collect(Collectors.toList());
         claims.put(CLAIM_KEY_AUTHORITIES, auth);
         claims.put(CLAIM_KEY_IS_ENABLED,userDetails.isEnabled());
         return generateToken(claims);
     }
+    
     String generateToken(Map<String, Object> claims) {
         ObjectMapper mapper = new ObjectMapper();
         return Jwts.builder()
