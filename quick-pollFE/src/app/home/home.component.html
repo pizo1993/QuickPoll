@@ -1,4 +1,4 @@
-<h1>Hi {{currentUser.fullname}}!</h1>
+<h1>Hi {{currentUser.fullName}}</h1>
 <p>You're logged in with Angular 6!!</p>
 <h3>All registered users:</h3>
 <ul>
@@ -7,4 +7,4 @@
         <!-- <a (click)="deleteUser(user.id)" class="text-danger">Delete</a> -->
     </li>
 </ul>
-<li><button (click)="logOut()">Logout</button></li>
+<li><button (click)="logOut()">Logout</button> <button (click)="currentUser.sayHello()">Saluta</button> </li>

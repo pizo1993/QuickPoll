@@ -92,8 +92,12 @@ public class WebConfig extends WebSecurityConfigurerAdapter {
                         "/**/*.css",
                         "/**/*.js"
                 ).permitAll()
-                .antMatchers("/public/**", "/login", "/logout", "/register" ).permitAll()
-                .anyRequest().authenticated();
+                .antMatchers("/public/**", "/login", "/register", "/logout").permitAll()
+                .anyRequest().authenticated()
+                .and()
+                .logout().permitAll()
+                .logoutRequestMatcher(new AntPathRequestMatcher("/logout", "POST")).logoutSuccessUrl("/login");
+        
         // Filtro Custom JWT 
         httpSecurity.addFilterBefore(authenticationTokenFilterBean(), UsernamePasswordAuthenticationFilter.class);
         

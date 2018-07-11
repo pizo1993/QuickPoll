@@ -12,11 +12,13 @@ export class HomeComponent implements OnInit {
 
 
   constructor(public authenticationService: AuthenticationService, public router: Router, public userService: UserService) {
-    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    
   }
 
 
     ngOnInit() {
+      this.currentUser = new User();
+      Object.assign(this.currentUser,JSON.parse(localStorage.getItem('currentUser')));
       this.loadAllUsers();
     }
 /*
@@ -28,24 +30,26 @@ export class HomeComponent implements OnInit {
 */  
   
      // login out from the app
+  
   logOut() {
     console.log("Logout in corso")
-    this.authenticationService.logOut()
-      .subscribe(
-        data => {
+    if (this.authenticationService.logOut()) {
           this.router.navigate(['/login']);
-        },
-        error => {
-        });
+    } else {
+      console.log("ERRORE");
+    }
+      
   }
+  
+  
   
     private loadAllUsers() {
       this.userService.getAll()
         .then(u => {
-          let usersObject = u;     
+          let usersObject = u;   
           usersObject.forEach((user, i) => {
           this.users[i]=new User();
-          this.users[i]=user;
+          this.users[i] = user;
           });
         });
     }

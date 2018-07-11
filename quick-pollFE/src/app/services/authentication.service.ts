@@ -28,27 +28,16 @@ export class AuthenticationService {
        localStorage.setItem('currentUser', JSON.stringify(res.body));
      }
     });
-/*  
-    return this.http.post(AppComponent.API_URL + '/login', data, options)
-      .map((response: Response) => {
-      // login successful if there's a jwt token in the response
-      console.log(response);
-      let user = response.json().principal;// the returned user object is a principal object
-      if (user) {
-        // store user details  in local storage to keep user logged in between page refreshes
-        localStorage.setItem('currentUser', JSON.stringify(user));
-      }
-    });*/
-  }
-
-  logOut() {
-    // remove user from local storage to log user out
-    console.log("Logout service")
-    return this.http.post(AppComponent.API_URL+"/logout",{})
-      .map((response: Response) => {
-        localStorage.removeItem('token');
-        localStorage.removeItem('currentUser');
-      });
-
+}
+  
+  public logOut() {
+    try {
+      localStorage.removeItem('token');
+      localStorage.removeItem('currentYser');
+      return true;
+    } catch (e) {
+      console.log("ERRORE: " + e);
+      return false;
+    }
   }
 }

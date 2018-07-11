@@ -20,6 +20,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -68,8 +69,7 @@ public class HomeController {
 					new CustomErrorType("user with username " + newUser.getUsername() + "already exist "),
 					HttpStatus.CONFLICT);
 		}
-		newUser.setRole("USER");
-		
+		newUser.setRole("USER");	
 		return new ResponseEntity<User>(userService.save(newUser), HttpStatus.CREATED);
 	}
 	
@@ -92,8 +92,20 @@ public class HomeController {
         final String token = jwtTokenUtil.generateToken(userDetails);
         response.addHeader(tokenHeader,token);
         // Ritorno il token
-        return ResponseEntity.ok(new JwtAuthenticationResponse(userDetails.getUsername(),userDetails.getAuthorities(), userDetails.getFullName()));
-    }
+        //return ResponseEntity.ok(new JwtAuthenticationResponse(userDetails.getUsername(),userDetails.getAuthorities(), userDetails.getFullName()));
+        return ResponseEntity.ok(userDetails);
+	}
+	
+	@CrossOrigin(origins = "http://localhost:4200")
+	@RequestMapping(value="/logout", method = RequestMethod.POST)
+	public String logoutPage (HttpServletRequest request, HttpServletResponse response) {
+	    Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+	    logger.info("Auth: " + auth);
+	    if (auth != null){ 
+	    	auth.setAuthenticated(false); 
+	    }
+	    return "Logout ok";
+	}
 
     @RequestMapping(value = "protected/refresh-token", method = RequestMethod.GET)
     public ResponseEntity<?> refreshAndGetAuthenticationToken(HttpServletRequest request, HttpServletResponse response) {

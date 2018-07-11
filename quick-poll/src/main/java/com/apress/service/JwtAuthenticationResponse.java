@@ -7,7 +7,6 @@ import java.util.Collection;
 
 import org.springframework.security.core.GrantedAuthority;
 
-import ch.qos.logback.classic.Logger;
 
 /**
  * Created by stephan on 20.03.16.
