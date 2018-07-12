@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
     currentUser: User;
     users: User[] = [];
-
+    showDetails: boolean[] = [];
+    
 
   constructor(public authenticationService: AuthenticationService, public router: Router, public userService: UserService) {
     
@@ -19,7 +20,7 @@ export class HomeComponent implements OnInit {
     ngOnInit() {
       this.currentUser = new User();
       Object.assign(this.currentUser,JSON.parse(localStorage.getItem('currentUser')));
-      this.loadAllUsers();
+      this.loadAllUsersFullname();
     }
 /*
     deleteUser(id: number) {
@@ -29,28 +30,36 @@ export class HomeComponent implements OnInit {
     }
 */  
   
-     // login out from the app
+    public changeShowDetails(id: number) {
+      return this.showDetails[id] =!this.showDetails[id];
+    }
   
-  logOut() {
+    public detailsLabel(bool: boolean) {
+      return bool ? 'Nascondi Dettagli' : 'Visualizza Dettagli';
+    }
+  
+  
+  
+    private loadAllUsersFullname() {
+      this.userService.getAll()
+        .then(u => {
+          let usersObject = u;   
+          usersObject.forEach((user, i) => {
+          this.users[i]= new User();
+          Object.assign(this.users[i], user)     
+          this.showDetails[user.id]=false;
+          });
+        });
+    }
+  
+  
+    logOut() {
     console.log("Logout in corso")
     if (this.authenticationService.logOut()) {
           this.router.navigate(['/login']);
     } else {
       console.log("ERRORE");
-    }
-      
+    }     
   }
   
-  
-  
-    private loadAllUsers() {
-      this.userService.getAll()
-        .then(u => {
-          let usersObject = u;   
-          usersObject.forEach((user, i) => {
-          this.users[i]=new User();
-          this.users[i] = user;
-          });
-        });
-    }
 }

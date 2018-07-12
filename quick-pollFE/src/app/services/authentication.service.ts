@@ -33,7 +33,7 @@ export class AuthenticationService {
   public logOut() {
     try {
       localStorage.removeItem('token');
-      localStorage.removeItem('currentYser');
+      localStorage.removeItem('currentUser');
       return true;
     } catch (e) {
       console.log("ERRORE: " + e);

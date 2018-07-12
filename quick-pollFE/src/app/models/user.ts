@@ -7,7 +7,7 @@ export class User {
     role: string;
   
     public sayHello () {
-      console.log("Ciao, sono: "+ this.fullName);      
+      console.log("Ciao, sono: " + this.fullName);      
     }
    
 }

@@ -4,7 +4,12 @@
 <ul>
     <li *ngFor="let user of users">
         {{user.fullName}} 
-        <!-- <a (click)="deleteUser(user.id)" class="text-danger">Delete</a> -->
-    </li>
+        <button (click)="changeShowDetails(user.id)" class="text-danger">{{detailsLabel(showDetails[user.id])}}</button> 
+    	
+    	<ul *ngIf="showDetails[user.id]">
+    		<li> Email: <b> {{user.username}} </b> <button *ngIf="currentUser.id==user.id">Modifica Dettagli Utente</button> </li>
+    		
+   		 </ul>
+	</li>
 </ul>
-<li><button (click)="logOut()">Logout</button> <button (click)="currentUser.sayHello()">Saluta</button> </li>
+<button (click)="logOut()">Logout</button> 
