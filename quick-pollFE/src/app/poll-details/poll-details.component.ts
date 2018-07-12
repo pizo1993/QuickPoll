@@ -1,3 +1,5 @@
+import { Option } from '../models/option';
+import { Vote } from '../models/vote';
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
@@ -26,7 +28,7 @@ export class PollDetailsComponent implements OnInit {
       alert("ERRORE; SELEZIONARE UN VOTO");
       return;
     }
-    alert("Voto selezionato: " + this.voteSelected.value);
+    alert("Voto selezionato: " + this.voteSelected);
   }
 
   public showResult(): void {

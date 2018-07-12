@@ -1,0 +1,15 @@
+<h1>Hi {{currentUser.fullName}}</h1>
+<p>You're logged in with Angular 6!!</p>
+<h3>All registered users:</h3>
+<ul>
+    <li *ngFor="let user of users">
+        {{user.fullName}} 
+        <button (click)="changeShowDetails(user.id)" class="text-danger">{{detailsLabel(showDetails[user.id])}}</button> 
+    	
+    	<ul *ngIf="showDetails[user.id]">
+    		<li> Email: <b> {{user.username}} </b> <button *ngIf="currentUser.id==user.id">Modifica Dettagli Utente</button> </li>
+    		
+   		 </ul>
+	</li>
+</ul>
+<button (click)="logOut()">Logout</button> 
