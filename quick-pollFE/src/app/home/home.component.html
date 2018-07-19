@@ -3,14 +3,14 @@
 <h3>All registered users:</h3>
 <ul>
     <li *ngFor="let user of users">
-        {{user.fullName}} 
-        <button (click)="changeShowInfo(user.id)" class="text-danger">{{infoLabel(showInfo[user.id])}}</button> 
-    	
+        {{user.fullName}}
+        <button (click)="changeShowInfo(user.id)" class="text-danger">{{infoLabel(showInfo[user.id])}}</button>
+
     	<ul *ngIf="showInfo[user.id]">
-    		<li >  Email: <b> {{user.username}} </b> <button *ngIf="currentUser.id==user.id">Modifica Dettagli Utente</button> </li>	
-   			<li> <button [routerLink]="['/userDetails/'+user.id]" class="btn btn-link">Visualizza Dettagli utente</button> </li> 
+    		<li >  Email: <b> {{user.username}} </b> <button *ngIf="currentUser.id==user.id">Modifica Dettagli Utente</button> </li>
+   			<li> <button [routerLink]="['/userDetails/', user.id]" class="btn btn-link">Visualizza Dettagli utente</button> </li> 
    		 </ul>
-   		 
+
 	</li>
 </ul>
-<button (click)="logOut()">Logout</button> 
+<button (click)="logOut()">Logout</button>

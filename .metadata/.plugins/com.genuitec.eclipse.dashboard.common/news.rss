@@ -12,12 +12,48 @@
 	<atom:link href="https://www.genuitec.com/feed/" rel="self" type="application/rss+xml" />
 	<link>https://www.genuitec.com</link>
 	<description>The Cloud Control Company</description>
-	<lastBuildDate>Wed, 11 Jul 2018 15:26:32 +0000</lastBuildDate>
+	<lastBuildDate>Wed, 18 Jul 2018 09:33:40 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=4.9.2</generator>
 	<item>
+		<title>A Day with Dani: Eclipse Plugin for Awesome Workspace Customization</title>
+		<link>https://www.genuitec.com/a-day-with-dani-eclipse-plugin-for-awesome-workspace-customization/</link>
+		<pubDate>Tue, 17 Jul 2018 21:04:46 +0000</pubDate>
+		<dc:creator><![CDATA[Dani Faris]]></dc:creator>
+				<category><![CDATA[Genuitec]]></category>
+		<category><![CDATA[codemix]]></category>
+		<category><![CDATA[DevStyle]]></category>
+		<category><![CDATA[eclipse plugins]]></category>
+		<category><![CDATA[navigation]]></category>
+		<category><![CDATA[theming]]></category>
+
+		<guid isPermaLink="false">https://www.genuitec.com/?p=593215</guid>
+		<description><![CDATA[<p>The post <a rel="nofollow" href="https://www.genuitec.com/a-day-with-dani-eclipse-plugin-for-awesome-workspace-customization/">A Day with Dani: Eclipse Plugin for Awesome Workspace Customization</a> appeared first on <a rel="nofollow" href="https://www.genuitec.com">Genuitec</a>.</p>
+]]></description>
+		</item>
+		<item>
+		<title>Angular 5, Firebase, and Angular Universal: Creating a Blog – Part 2</title>
+		<link>https://www.genuitec.com/angular-5-firebase-angular-universal-creating-blog-part-2/</link>
+		<pubDate>Thu, 12 Jul 2018 13:13:42 +0000</pubDate>
+		<dc:creator><![CDATA[dunebook7]]></dc:creator>
+				<category><![CDATA[Eclipse]]></category>
+		<category><![CDATA[Genuitec]]></category>
+		<category><![CDATA[MyEclipse]]></category>
+		<category><![CDATA[Programming Tips]]></category>
+		<category><![CDATA[Webclipse]]></category>
+		<category><![CDATA[angular 5]]></category>
+		<category><![CDATA[Angular Universal]]></category>
+		<category><![CDATA[creating a blog]]></category>
+		<category><![CDATA[Firebase]]></category>
+
+		<guid isPermaLink="false">https://www.genuitec.com/?p=558882</guid>
+		<description><![CDATA[<p>We will continue from where we left off in the first article. In this part of the article, we will add the markdown editor for authoring posts on our blog, and we will set up Firebase for authentication and persisting data to remote storage. Let’s get started!Starting a New Cloud Firestore ProjectOpen the Firebase console [&#8230;]</p>
+<p>The post <a rel="nofollow" href="https://www.genuitec.com/angular-5-firebase-angular-universal-creating-blog-part-2/">Angular 5, Firebase, and Angular Universal: Creating a Blog – Part 2</a> appeared first on <a rel="nofollow" href="https://www.genuitec.com">Genuitec</a>.</p>
+]]></description>
+		</item>
+		<item>
 		<title>A Day with Dani: Getting Started Tips for New Developers</title>
 		<link>https://www.genuitec.com/a-day-with-dani-getting-started-tips-for-new-developers/</link>
 		<pubDate>Fri, 06 Jul 2018 19:06:02 +0000</pubDate>
@@ -265,45 +301,6 @@
 <p>The post <a rel="nofollow" href="https://www.genuitec.com/angular-5-authentication/">Angular 5 Authentication: Getting Started</a> appeared first on <a rel="nofollow" href="https://www.genuitec.com">Genuitec</a>.</p>
 ]]></description>
 		</item>
-		<item>
-		<title>Eclipse — Still the Best IDE!</title>
-		<link>https://www.genuitec.com/eclipse-still-best-ide/</link>
-		<pubDate>Wed, 31 Jan 2018 07:07:38 +0000</pubDate>
-		<dc:creator><![CDATA[Brian Fernandes]]></dc:creator>
-				<category><![CDATA[Eclipse]]></category>
-		<category><![CDATA[Genuitec]]></category>
-		<category><![CDATA[MyEclipse]]></category>
-		<category><![CDATA[Planet Eclipse]]></category>
-		<category><![CDATA[Programming Tips]]></category>
-		<category><![CDATA[Webclipse]]></category>
-		<category><![CDATA[eclipse features]]></category>
-		<category><![CDATA[webclipse]]></category>
-
-		<guid isPermaLink="false">https://www.genuitec.com/?p=548306</guid>
-		<description><![CDATA[<p>As a developer, you’ve probably grown to love using an IDE — but in the modern coding universe of choices, how do you choose the best IDE? While some might try to convince you that the &#8220;cool kids&#8221; are using IntelliJ, whether you’re looking for your first IDE, or being pressured into switching, here are some reasons [&#8230;]</p>
-<p>The post <a rel="nofollow" href="https://www.genuitec.com/eclipse-still-best-ide/">Eclipse — Still the Best IDE!</a> appeared first on <a rel="nofollow" href="https://www.genuitec.com">Genuitec</a>.</p>
-]]></description>
-		</item>
-		<item>
-		<title>Angular 5, Firebase, and Angular Universal: Creating a Blog – Part 1</title>
-		<link>https://www.genuitec.com/angular-5-firebase-angular-universal/</link>
-		<pubDate>Wed, 24 Jan 2018 16:13:44 +0000</pubDate>
-		<dc:creator><![CDATA[Bob at Genuitec]]></dc:creator>
-				<category><![CDATA[Eclipse]]></category>
-		<category><![CDATA[Genuitec]]></category>
-		<category><![CDATA[MyEclipse]]></category>
-		<category><![CDATA[Programming Tips]]></category>
-		<category><![CDATA[Webclipse]]></category>
-		<category><![CDATA[angular 5]]></category>
-		<category><![CDATA[Angular Universal]]></category>
-		<category><![CDATA[creating a blog]]></category>
-		<category><![CDATA[Firebase]]></category>
-
-		<guid isPermaLink="false">https://www.genuitec.com/?p=544600</guid>
-		<description><![CDATA[<p>We will be creating a blog using Angular 5, and Firebase in a 3 part series &#8211; our app will allow for easy creation and publishing of blog posts. A normal Angular application executes in the browser, rendering pages in the DOM in response to user actions. In order to improve the user experience, we want [&#8230;]</p>
-<p>The post <a rel="nofollow" href="https://www.genuitec.com/angular-5-firebase-angular-universal/">Angular 5, Firebase, and Angular Universal: Creating a Blog – Part 1</a> appeared first on <a rel="nofollow" href="https://www.genuitec.com">Genuitec</a>.</p>
-]]></description>
-		</item>
 	</channel>
 </rss>
 
@@ -312,7 +309,7 @@ Performance optimized by W3 Total Cache. Learn more: https://www.w3-edge.com/pro
 
 Page Caching using disk: enhanced (SSL caching disabled) 
 Content Delivery Network via resources.cloud.genuitec.com
-Database Caching 153/158 queries in 0.028 seconds using disk
+Database Caching 150/156 queries in 0.814 seconds using disk
 
-Served from: www.genuitec.com @ 2018-07-12 10:19:58 by W3 Total Cache
+Served from: www.genuitec.com @ 2018-07-18 05:44:23 by W3 Total Cache
 -->

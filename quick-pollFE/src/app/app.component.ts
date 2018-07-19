@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Poll } from './models/poll';
 import { UserService } from './services/user.service';
+import { AuthenticationService } from './services/authentication.service';
 import 'rxjs/add/operator/toPromise';
 
 @Component({
@@ -18,8 +19,8 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit(): void {
-
+    localStorage.clear();
   }
-  
-  
+
+
 }
