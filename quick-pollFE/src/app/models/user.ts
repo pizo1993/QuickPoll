@@ -5,6 +5,7 @@ export class User {
     username: string;
     fullName: string;
     role: string;
+    pollsId: number[];
   
     public sayHello () {
       console.log("Ciao, sono: " + this.fullName);      

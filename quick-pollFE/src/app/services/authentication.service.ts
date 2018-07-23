@@ -21,7 +21,7 @@ export class AuthenticationService {
             .set('Content-Type', 'application/json'),
         observe: 'response'
     })
-   .map((res ) => { 
+   .map((res) => { 
      let token=res.headers.get('X-Auth');
      if (token) {
        localStorage.setItem('token', JSON.stringify(token));

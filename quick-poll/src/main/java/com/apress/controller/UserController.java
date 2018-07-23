@@ -18,24 +18,25 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.apress.domain.User;
 import com.apress.repository.UserRepository;
+import com.apress.service.UserService;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class UserController {
 	
 	@Inject
-	private UserRepository userRepository;
+	private UserService userService;
 	
 	@RequestMapping(value="/users", method=RequestMethod.GET)
 	public ResponseEntity<Iterable<User>> getAllUsers() {
-		Iterable<User> allUsers = userRepository.findAll();
+		Iterable<User> allUsers = userService.findAll();
 		//return new ResponseEntity<>(pollRepository.findAll(), HttpStatus.OK);
 		return new ResponseEntity<>(allUsers, HttpStatus.OK);
 	}
 
 	@RequestMapping(value="/users", method=RequestMethod.POST)
 	public ResponseEntity<?> createUser(@RequestBody User user) {
-		user = userRepository.save(user);
+		user = userService.save(user);
 		// Set the location header for the newly created resource
 		HttpHeaders responseHeaders = new HttpHeaders();
 		URI newUserUri = ServletUriComponentsBuilder
@@ -49,7 +50,7 @@ public class UserController {
 
 	@RequestMapping(value="/users/{userId}", method=RequestMethod.GET)
 	public ResponseEntity<?> getUser(@PathVariable Long userId) {
-		Optional<User> u = userRepository.findById(userId);
+		Optional<User> u = userService.findById(userId);
 		return new ResponseEntity<> (u, HttpStatus.OK);
 	}
 	
@@ -57,13 +58,18 @@ public class UserController {
 	@RequestMapping(value="/users/{userId}", method=RequestMethod.PUT)
 	public ResponseEntity<?> updateUser(@RequestBody User user, @PathVariable Long userId) {
 		// Save the entity
-		User u = userRepository.save(user);
+		User u = userService.save(user);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
+	
 	@RequestMapping(value="/users/{userId}", method=RequestMethod.DELETE)
 	public ResponseEntity<?> deleteUser(@PathVariable Long userId) {
-		userRepository.deleteById(userId);
+		userService.deleteById(userId);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
+	
+	
+	
+	
 
 }

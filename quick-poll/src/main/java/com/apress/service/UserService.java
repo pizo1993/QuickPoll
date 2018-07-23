@@ -25,10 +25,26 @@ public class UserService {
 	public User findByUsername(String username) {
 		return userRepository.findByUsername(username);
 	}
+	
+	public Iterable<User> findAll() {
+		return userRepository.findAll();
+	}
+
+	
+	public Optional<User> findById(Long id) {
+		return userRepository.findById(id);
+	}
 
 	public User save(User user) {
 		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		return userRepository.save(user);
 	}
+	
+	public void deleteById(Long id) {
+		userRepository.deleteById(id);
+	}
+	
+
+	
 
 }

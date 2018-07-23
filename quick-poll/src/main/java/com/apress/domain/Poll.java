@@ -31,7 +31,7 @@ public class Poll {
 	
 	@ManyToOne
 	@JoinColumn(name="USER_ID", nullable = false)
-	private User user_id;
+	private User userId;
 	
 	@Column(name="QUESTION")
 	private String question;

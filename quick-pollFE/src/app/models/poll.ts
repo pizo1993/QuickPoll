@@ -1,10 +1,15 @@
 import {Option} from './option'
+import { User } from './user';
 
 export class Poll {
 
   private displayInfo: boolean;
-
-  constructor(public id: number, public question: string, public options: Option[]) {
+  public id: number;
+  public idCreator: User;
+  public question: string; 
+  public options: Option[];
+  
+  constructor() {
     this.displayInfo = false;
     let optionsArray = this.options;
     optionsArray.forEach((o, index) =>  {
