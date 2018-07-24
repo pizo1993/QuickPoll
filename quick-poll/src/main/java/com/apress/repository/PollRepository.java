@@ -19,6 +19,6 @@ public interface PollRepository extends JpaRepository<Poll, Long> {
 	
 	public Optional<Poll> findById(Long id);
 	public Optional<Poll> findByQuestion(String question);
-	public Iterable<Poll> findByUserId(Long id);
+	public Iterable<Poll> findByUserId(User user);
 	
 }

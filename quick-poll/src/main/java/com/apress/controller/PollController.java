@@ -4,6 +4,8 @@ import java.util.Optional;
 
 import javax.inject.Inject;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.apress.QuickPollApplication;
 import com.apress.domain.Poll;
 import com.apress.domain.User;
 import com.apress.repository.PollRepository;
@@ -29,14 +32,24 @@ public class PollController {
 	
 	@Inject 
 	private PollRepository pollRepository;
-
+	
+	private static final Logger logger = LoggerFactory.getLogger(PollController.class);
 	
 	@RequestMapping(value="/polls", method=RequestMethod.GET)
-	public ResponseEntity<Iterable<Poll>> getAllPolls(@RequestParam(value="userId", required=false) Long userId) {
-		
+	public ResponseEntity<Iterable<Poll>> getAllPolls() {
+		logger.info("Request API /polls without Request Param");
 		Iterable<Poll> allPolls = pollService.findAll();
 		//return new ResponseEntity<>(pollRepository.findAll(), HttpStatus.OK);
 		return new ResponseEntity<>(allPolls, HttpStatus.OK);
+	}
+
+	
+	@RequestMapping(value="/polls", method=RequestMethod.GET, params = {"idUser"})
+	public ResponseEntity<Iterable<Poll>> getAllPolls(@RequestParam(value="idUser") User idUser) {	
+		logger.info("Request API /polls with Request Param: " + idUser);
+		Iterable<Poll> allUsersPolls = pollService.findByUserId(idUser);
+		//return new ResponseEntity<>(pollRepository.findAll(), HttpStatus.OK);
+		return new ResponseEntity<>(allUsersPolls, HttpStatus.OK);
 	}
 
 	@RequestMapping(value="/polls", method=RequestMethod.POST)

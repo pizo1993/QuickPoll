@@ -36,5 +36,10 @@ export class UserService {
             .toPromise()
             .then(response => response.json() as User);
   }
+  
+  
+  public shareUser() {
+    
+  }
 
 }

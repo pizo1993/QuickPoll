@@ -1,1 +1,3 @@
-<h1> Profilo di {{userId}}</h1>
+<h1> Pagina di dettaglio di {{user.fullName}} </h1>
+
+<h2 *ngIf="this.pollList===undefined"> Non ci sono sondaggi creati da questo utente!! </h2>

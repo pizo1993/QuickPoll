@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import com.apress.domain.Poll;
@@ -40,7 +41,7 @@ public class PollService {
 	}
 	
 	
-	public Iterable<Poll> findByUserId(Long userId) {	
+	public Iterable<Poll> findByUserId(User userId) {	
 		return pollRepository.findByUserId(userId);
 	}
 
