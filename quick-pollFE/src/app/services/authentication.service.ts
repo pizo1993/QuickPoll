@@ -12,7 +12,6 @@ export class AuthenticationService {
   constructor(public http: HttpClient) {}
 
   public logIn(user: User){
-    
     return this.http.post(AppComponent.API_URL + '/login', {
         'username': user.username,
         'password': user.password

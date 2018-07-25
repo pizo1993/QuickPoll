@@ -20,15 +20,8 @@ export class HomeComponent implements OnInit {
     ngOnInit() {
       this.currentUser = new User();
       Object.assign(this.currentUser, JSON.parse(localStorage.getItem('currentUser')));
-      this.loadAllUsersFullname();
+      this.loadAllUsers();    
     }
-/*
-    deleteUser(id: number) {
-        this.userService.delete(id).pipe(first()).subscribe(() => {
-            this.loadAllUsers()
-        });
-    }
-*/
 
     public changeShowInfo(id: number) {
       return this.showInfo[id] = !this.showInfo[id];
@@ -37,9 +30,12 @@ export class HomeComponent implements OnInit {
     public infoLabel(bool: boolean) {
       return bool ? 'Nascondi Info' : 'MostraInfo';
     }
+  
+  // Chiamata al servizio UserService, serve per memorizzare le informazioni sull'utente loggato.
+   
 
 // Chiamata al servizio userService. Viene creato un oggetto di tipo User per ogni istanza restituita dalla chiamata al servizio. 
-    private loadAllUsersFullname() {
+    private loadAllUsers() {
       this.userService.getAll()
         .then(u => {
           const usersObject = u;
@@ -55,12 +51,19 @@ export class HomeComponent implements OnInit {
 
 
     logOut() {
-    console.log('Logout in corso');
-    if (this.authenticationService.logOut()) {
-          this.router.navigate(['/login']);
-    } else {
-      console.log('ERRORE');
+      console.log('Logout in corso');
+      if (this.authenticationService.logOut()) {
+            this.router.navigate(['/login']);
+      } else {
+        console.log('ERRORE');
+      }
     }
-  }
+  
+    private shareUser(user: User) {
+      this.userService.shareUser(user);
+    }
+  
+    
+  
 
 }

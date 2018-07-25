@@ -25,15 +25,13 @@ export class UserdetailsComponent implements OnInit {
 
     this.sub = this.route.params.subscribe(p => {
       this.userId = p['id'];
-      this.getUserById();
+      this.getUser();
       this.getPollsByUserId();
      });
   }
   
-   private getUserById() {
-    this.userService.getUserById(this.userId).then(u => {
-      Object.assign(this.user, u);
-    });
+   private getUser() {
+    this.user=this.userService.getSharedUser();
   }
 
 
